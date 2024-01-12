@@ -5,7 +5,18 @@ Dieses Projekt ist ein Pflanzenbewässerungssystem, das in C++ für Arduino impl
 ## Platine
 
 ![Hier sollte das Foto sein](platine.png)
+
 Die Gerber Dateien, mit denen die Platine zum Projekt bestellt werden kann sind im Verzeichnis zu finden. ("Gerber_Files_PCB_Pflanzenbewässerung_Nano_2024-01-12_v2.zip") einfach herunterladen und z. B. auf jlcpcb.com, ... bestellen
+
+## Teileliste
+
+* Arduino nano
+* doppelte Lüsterklemme 
+* dreifache Lüsterklemme
+* TIP120 Leistungstransistor
+* kapazitiver Feuchtesensor
+* 2x tactile Switch button
+
 
 ## Überblick
 
