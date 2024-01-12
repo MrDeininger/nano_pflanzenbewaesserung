@@ -8,23 +8,47 @@
 #define PUMP_PIN 9     // Pin für die Pumpe
 #define NUMPIXELS 2    // Anzahl der LEDs
 
+
+/**
+ * EEPROM
+*/
+
 void readFromEEPROM();
 void saveToEEPROM();
+
+/**
+ * Moisture Sensor
+*/
+
 void getMoistureReading(int iterations, int delayPerIteration);
+const int sensorPin = A0;
 int moisture = 0;
 uint16_t tmp_moisture = 0;
 unsigned long millis_moisture = 0;
 int iteration_moisture = 0;
 unsigned moisture_min_reading = 1023;
 unsigned moisture_max_reading = 0;
-
-void printAllValues();
 bool isMoistureBelowThreshold(uint16_t moisture);
+uint16_t threshhold = 0;
+
+
+/**
+ * Serial
+*/
+void printAllValues();
+
+/**
+ * State Machine
+*/
 
 void stateMachine(int watering_time, int pause_after_watering, int delay_per_iteration, int iterations_to_average);
 
 unsigned long millis_stateMachine = 0;
 int state = 0;
+int watering_time = 3000;
+int pause_after_watering = 10000;
+int delay_per_iteration = 10;
+int iterations_to_average = 10;
 
 /**
  * Buttons
@@ -53,13 +77,11 @@ void interpolate_color(uint8_t r1, uint8_t g1, uint8_t b1, uint8_t r2, uint8_t g
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-const int sensorPin = A0;
-uint16_t threshhold = 0;
 
-int watering_time = 3000;
-int pause_after_watering = 10000;
-int delay_per_iteration = 10;
-int iterations_to_average = 10;
+/**
+ * Setup
+*/
+
 
 void setup()
 {
@@ -73,6 +95,10 @@ void setup()
   readFromEEPROM();                    // Lese den Wert aus dem EEPROM
 }
 
+/**
+ * Loop
+*/
+
 void loop()
 {
 
@@ -85,50 +111,39 @@ void loop()
 
 void saveToEEPROM()
 {
-  // save the threshold to the EEPROM
   if (threshhold > 100)
-  { // threshold can't be higher than 100, so if the value is higher than 100, set it to 100
+  { 
     threshhold = 0;
   }
   threshhold = constrain(threshhold, 0, 100);
   EEPROM.put(0, threshhold);
-  // save the minimum moisture reading to the EEPROM
   if (moisture_min_reading > 1023)
-  { // unsigned int can't be negative, so if the value is negative, set it to 0
+  { 
     moisture_min_reading = 0;
   }
   moisture_min_reading = constrain(moisture_min_reading, 0, 1023);
   EEPROM.put(2, moisture_min_reading);
 
   if (moisture_max_reading > 1023)
-  { // unsigned int can't be negative, so if the value is negative, set it to 0
+  { 
     moisture_max_reading = 0;
   }
-  // save the maximum moisture reading to the EEPROM
   moisture_max_reading = constrain(moisture_max_reading, 0, 1023);
   EEPROM.put(4, moisture_max_reading);
 }
 
 void readFromEEPROM()
 {
-  // check if the value is already stored in the EEPROM
   if (EEPROM.read(0) == 255)
   {
-    // if not, store the default value
-    // Threshold is set to 50% by default
     EEPROM.put(0, 50);
-    // minimum moisture reading is set to 1023 by default
     EEPROM.put(2, 1023);
-    // maximum moisture reading is set to 0 by default
     EEPROM.put(4, 0);
   }
   else
   {
-    // if so, read the value from the EEPROM
     EEPROM.get(0, threshhold);
-    // read the minimum moisture reading from the EEPROM
     EEPROM.get(2, moisture_min_reading);
-    // read the maximum moisture reading from the EEPROM
     EEPROM.get(4, moisture_max_reading);
   }
 }
