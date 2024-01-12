@@ -15,6 +15,12 @@ So könnte das Projekt am ende aussehen.
 
 ![Hier sollte das Foto sein](pflanzenfoto.jpg)
 
+## Steuerung
+Im Code sind die folgenden Befehle einprogrammiert:
+* linker Button klicken: Senke die Zielfeuchtigkeit in der Erde um 5%
+* rechter Button klicken: Erhöhe die Zielfeuchtigkeit in der Erde 5%
+* beide Buttons gleichzeitig (kurz): setze Zielfeuchtigkeit 10% unter momentaner Feuchtigkeit
+* beide Buttons gleichzeitig (> 3 Sekunden): setze Sensorkalibrierung zurück
 
 ## Teileliste
 
