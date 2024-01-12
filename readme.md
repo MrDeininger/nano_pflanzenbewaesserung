@@ -17,8 +17,8 @@ So könnte das Projekt am ende aussehen.
 
 ## Steuerung
 Im Code sind die folgenden Befehle einprogrammiert:
-* linker Button klicken: Senke die Zielfeuchtigkeit in der Erde um 5%
-* rechter Button klicken: Erhöhe die Zielfeuchtigkeit in der Erde 5%
+* linker Button klicken: Senke die Zielfeuchtigkeit in der Erde um 5% (Erde im Blumentopf muss also 5% trockener sein, bevor die Pumpe anfängt zu pumpen) 
+* rechter Button klicken: Erhöhe die Zielfeuchtigkeit in der Erde 5% (Pumpe fängt also schon bei 5% mehr Wasser im Boden an zu pumpen)
 * beide Buttons gleichzeitig (kurz): setze Zielfeuchtigkeit 10% unter momentaner Feuchtigkeit
 * beide Buttons gleichzeitig (> 3 Sekunden): setze Sensorkalibrierung zurück
 
