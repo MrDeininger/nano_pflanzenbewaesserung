@@ -2,6 +2,10 @@
 
 Dieses Projekt ist ein Pflanzenbewässerungssystem, das in C++ für Arduino implementiert wurde, wie in der [main.cpp](src/main.cpp) Datei zu sehen ist.
 
+## Platine
+
+Die Gerber Dateien, mit denen die Platine zum Projekt bestellt werden kann sind im Verzeichnis zu finden. ("Gerber_Files_PCB_Pflanzenbewässerung_Nano_2024-01-12_v2.zip") einfach herunterladen und z. B. auf jlcpcb.com, ... bestellen
+
 ## Überblick
 
 Das System misst den Feuchtigkeitsgehalt des Bodens und bewässert die Pflanze, wenn der Feuchtigkeitsgehalt unter einen bestimmten Schwellenwert fällt. Es beinhaltet auch Funktionen zum Speichern und Lesen von Daten aus dem EEPROM, zum Verarbeiten von Tastendrücken und zur Steuerung von LEDs.
