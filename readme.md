@@ -44,8 +44,8 @@ Das System misst den Feuchtigkeitsgehalt des Bodens und bewässert die Pflanze, 
 
 ## Schlüsselfunktionen
 
-- `setup()`: Stellt den Anfangszustand des Systems ein.
-- `loop()`: Hauptzyklus, in dem das System den Feuchtigkeitsgehalt überprüft und entscheidet, ob die Pflanze bewässert werden soll.
+- `setup()`: Stellt den Anfangszustand des Systems ein. ( Arudino - Standard )
+- `loop()`: Hauptzyklus, in dem das System den Feuchtigkeitsgehalt überprüft und entscheidet, ob die Pflanze bewässert werden soll. ( auch Arduino - Standard )
 - `saveToEEPROM()`: Speichert Daten im EEPROM.
 - `readFromEEPROM()`: Liest Daten aus dem EEPROM.
 - `printAllValues()`: Druckt alle Werte für Debugging-Zwecke.
