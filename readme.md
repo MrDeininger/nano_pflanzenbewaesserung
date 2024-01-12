@@ -32,3 +32,9 @@ Dieses Projekt wird mit PlatformIO gebaut und betrieben. Bitte beziehen Sie sich
 ## LED-Anzeigen
 
 Die obere LED zeigt die Feuchtigkeit im Blumentopf an (von trocken: rot zu okay: grün zu feucht: blau), und die untere LED zeigt den Schwellenwert (gleicher Farbverlauf).
+
+## Beispielfoto - mit Platine
+
+So könnte das Projekt am ende aussehen.
+
+![Hier sollte das Foto sein](pflanzenfoto.jpg)
