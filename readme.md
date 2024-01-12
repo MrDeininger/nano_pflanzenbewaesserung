@@ -17,9 +17,11 @@ Die Gerber Dateien, mit denen die Platine zum Projekt bestellt werden kann sind 
 * dreifache Lüsterklemme
 * TIP120 Leistungstransistor
 * kapazitiver Feuchtesensor
-* 2x tactile Switch button
+* 2x Tactile Switch button
+* 5v Wasserpumpe
+* Wasserspeicher
 
-
+-> ca 15€ kosten
 ## Überblick
 
 Das System misst den Feuchtigkeitsgehalt des Bodens und bewässert die Pflanze, wenn der Feuchtigkeitsgehalt unter einen bestimmten Schwellenwert fällt. Es beinhaltet auch Funktionen zum Speichern und Lesen von Daten aus dem EEPROM, zum Verarbeiten von Tastendrücken und zur Steuerung von LEDs.
