@@ -9,6 +9,12 @@ Die Gerber Dateien, mit denen die Platine zum Projekt bestellt werden kann sind 
 
 ![Hier sollte das Foto sein](platine.png)
 
+### Beispielfoto
+
+So könnte das Projekt am ende aussehen.
+
+![Hier sollte das Foto sein](pflanzenfoto.jpg)
+
 
 ## Teileliste
 
@@ -56,8 +62,3 @@ Dieses Projekt wird mit PlatformIO gebaut und betrieben. Bitte beziehen Sie sich
 
 Die obere LED zeigt die Feuchtigkeit im Blumentopf an (von trocken: rot zu okay: grün zu feucht: blau), und die untere LED zeigt den Schwellenwert (gleicher Farbverlauf).
 
-## Beispielfoto - mit Platine
-
-So könnte das Projekt am ende aussehen.
-
-![Hier sollte das Foto sein](pflanzenfoto.jpg)
