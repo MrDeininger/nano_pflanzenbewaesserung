@@ -1,30 +1,34 @@
-# Plant Watering System
+# Pflanzenbewässerungssystem
 
-This project is a plant watering system implemented in C++ for Arduino, as seen in the [main.cpp](src/main.cpp) file.
+Dieses Projekt ist ein Pflanzenbewässerungssystem, das in C++ für Arduino implementiert wurde, wie in der [main.cpp](src/main.cpp) Datei zu sehen ist.
 
-## Overview
+## Überblick
 
-The system measures the moisture level of the soil and waters the plant if the moisture level falls below a certain threshold. It also includes functionality for saving and reading data from EEPROM, handling button presses, and controlling LEDs.
+Das System misst den Feuchtigkeitsgehalt des Bodens und bewässert die Pflanze, wenn der Feuchtigkeitsgehalt unter einen bestimmten Schwellenwert fällt. Es beinhaltet auch Funktionen zum Speichern und Lesen von Daten aus dem EEPROM, zum Verarbeiten von Tastendrücken und zur Steuerung von LEDs.
 
-## Key Functions
+## Schlüsselfunktionen
 
-- `setup()`: Sets up the initial state of the system.
-- `loop()`: Main loop where the system checks the moisture level and decides whether to water the plant.
-- `saveToEEPROM()`: Saves data to EEPROM.
-- `readFromEEPROM()`: Reads data from EEPROM.
-- `printAllValues()`: Prints all values for debugging purposes.
-- `getMoistureReading(int iterations_to_average, int delay_per_iteration)`: Gets the moisture reading from the sensor.
-- `isMoistureBelowThreshold(uint16_t moisture)`: Checks if the moisture level is below the threshold.
-- `handleButtons()`: Handles button presses.
-- `button1_onClick()`, `button2_onClick()`, `both_buttons_onClick()`, `both_buttons_longPress()`: Functions for handling specific button press events.
-- `stateMachine(int watering_time, int pause_after_watering, int delay_per_iteration, int iterations_to_average)`: Controls the state of the system.
-- `handleLEDs()`: Controls the LEDs.
-- `interpolate_color(uint8_t r1, uint8_t g1, uint8_t b1, uint8_t r2, uint8_t g2, uint8_t b2, uint8_t &r, uint8_t &g, uint8_t &b, float t)`: Interpolates between two colors.
+- `setup()`: Stellt den Anfangszustand des Systems ein.
+- `loop()`: Hauptzyklus, in dem das System den Feuchtigkeitsgehalt überprüft und entscheidet, ob die Pflanze bewässert werden soll.
+- `saveToEEPROM()`: Speichert Daten im EEPROM.
+- `readFromEEPROM()`: Liest Daten aus dem EEPROM.
+- `printAllValues()`: Druckt alle Werte für Debugging-Zwecke.
+- `getMoistureReading(int iterations_to_average, int delay_per_iteration)`: Erhält die Feuchtigkeitsmessung vom Sensor.
+- `isMoistureBelowThreshold(uint16_t moisture)`: Überprüft, ob der Feuchtigkeitsgehalt unter dem Schwellenwert liegt.
+- `handleButtons()`: Verarbeitet Tastendrücke.
+- `button1_onClick()`, `button2_onClick()`, `both_buttons_onClick()`, `both_buttons_longPress()`: Funktionen zur Verarbeitung spezifischer Tastendruckereignisse.
+- `stateMachine(int watering_time, int pause_after_watering, int delay_per_iteration, int iterations_to_average)`: Steuert den Zustand des Systems.
+- `handleLEDs()`: Steuert die LEDs.
+- `interpolate_color(uint8_t r1, uint8_t g1, uint8_t b1, uint8_t r2, uint8_t g2, uint8_t b2, uint8_t &r, uint8_t &g, uint8_t &b, float t)`: Interpoliert zwischen zwei Farben.
 
-## Dependencies
+## Abhängigkeiten
 
-The project depends on the Adafruit NeoPixel library, as specified in the [platformio.ini](platformio.ini) file.
+Das Projekt hängt von der Adafruit NeoPixel-Bibliothek ab, wie in der [platformio.ini](platformio.ini) Datei angegeben.
 
-## Building and Running
+## Bau und Betrieb
 
-This project is built and run using PlatformIO. Please refer to the [PlatformIO documentation](https://docs.platformio.org/page/projectconf.html) for more information on how to build and run the project.
+Dieses Projekt wird mit PlatformIO gebaut und betrieben. Bitte beziehen Sie sich auf die [PlatformIO-Dokumentation](https://docs.platformio.org/page/projectconf.html) für weitere Informationen zum Bau und Betrieb des Projekts.
+
+## LED-Anzeigen
+
+Die obere LED zeigt die Feuchtigkeit im Blumentopf an (von trocken: rot zu okay: grün zu feucht: blau), und die untere LED zeigt den Schwellenwert (gleicher Farbverlauf).
