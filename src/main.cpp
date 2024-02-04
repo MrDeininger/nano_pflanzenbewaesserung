@@ -22,7 +22,7 @@ void saveToEEPROM();
 
 void getMoistureReading(int iterations, int delayPerIteration);
 const int sensorPin = A0;
-int moisture = 0;
+int moisture = 100;
 uint16_t tmp_moisture = 0;
 unsigned long millis_moisture = 0;
 int iteration_moisture = 0;
@@ -185,7 +185,6 @@ void getMoistureReading(int iterations_to_average, int delay_per_iteration)
 
   if (iteration_moisture >= iterations_to_average)
   {
-    printAllValues();
     moisture = tmp_moisture / iterations_to_average;
     tmp_moisture = 0;
     iteration_moisture = 0;
@@ -202,7 +201,7 @@ void getMoistureReading(int iterations_to_average, int delay_per_iteration)
       saveToEEPROM();
     }
 
-    // map the moisture to a value between 0 and 255%
+    // map the moisture to a value between 0 and 100%
     moisture = map(moisture, moisture_min_reading, moisture_max_reading, 100, 0);
   }
 }
